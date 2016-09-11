@@ -1,0 +1,10 @@
+name: BadlionTest
+main: org.jbltd.matchmaking.Main
+version: 1.0
+author: SparkWings
+
+commands:
+    tinvite:
+    tcreate:
+    accept:
+    queue:
