@@ -6,6 +6,8 @@ A simple matchmaking system for Minecraft.
 
 Uses Spigot 1.8.8-R0.1-SNAPSHOT for building.
 
+
+
 #How it Works
 
 When a player joins the server, they are given the option to either queue for the solo queue, or create a party (called a team). If they choose to go solo, they are matched to another player in the queue that is the closest possible Combat Value to them. Combat Value is what the system reads is how "prepared" the player is for their fight. Players with lower combat values are seen as less prepared.
@@ -26,7 +28,7 @@ In the event of an odd number of players or teams in the queue, the last person 
 
 #Analytics
 
-The average amount of time for a queue processing to occur is 0.007 seconds for 3 players.
-The average amount of time it takes for the plugin to register, enable, and configure its modules is 0.0113 seconds
-Quadratic Big O Notation was not used.
-HashSets are used to store data tables which could be considerably large, whereas ArrayLists are used to store smaller data
+- The average amount of time for a queue processing to occur is 0.007 seconds for 3 players.
+- The average amount of time it takes for the plugin to register, enable, and configure its modules is 0.0113 seconds
+- Quadratic Big O Notation was not used.
+- HashSets are used to store data tables which could be considerably large, whereas ArrayLists are used to store smaller data
