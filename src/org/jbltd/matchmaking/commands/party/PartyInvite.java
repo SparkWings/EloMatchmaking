@@ -64,11 +64,13 @@ public class PartyInvite implements CommandExecutor {
 	    if(manager.MasterTeamPlayerData.contains(target.getUniqueId()))
 	    {
 		player.sendMessage(F.error("Teams", "That player is already on a team", false));
+		return true;
 	    }
 	    
 	    if(t.getTeamLeader() != player)
 	    {
 		player.sendMessage(F.error("Teams", "You are not the team leader.", false));
+		return true;
 	    }
 	    
 	    if (Invite.searchInviteByPlayer(target) == null) {

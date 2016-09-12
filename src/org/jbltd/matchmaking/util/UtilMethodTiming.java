@@ -1,5 +1,9 @@
 package org.jbltd.matchmaking.util;
 
+/**
+ * Utility class used to measure how long it takes methods to complete.
+ *
+ */
 public class UtilMethodTiming{
 
     private long _startTime;

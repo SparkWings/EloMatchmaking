@@ -3,6 +3,11 @@ package org.jbltd.matchmaking.util;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
+/**
+ * Small utility class to pull player's ping (clean)
+ * @param org.bukkit.entity.Player
+ *
+ */
 public class UtilPing {
 
     

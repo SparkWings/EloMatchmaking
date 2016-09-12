@@ -2,22 +2,10 @@ package org.jbltd.matchmaking.util;
 
 public enum UpdateType
 {
-    	MINECRAFT_DAY(1200000),
-	MIN_64(3840000),
-	MIN_32(1920000),
-	MIN_16(960000),
-	MIN_08(480000),
-	MIN_04(240000),
-	MIN_02(120000),
-	MIN_01(60000), 
-	SLOWEST(32000),
-	SLOWER(16000),
-	SLOW(4000),
+	FIVESEC(5000),
 	TWOSEC(2000),
 	SEC(1000),
 	FAST(500),
-	FASTER(250),
-	FASTEST(125),
 	TICK(49);
 
 	private long _time;

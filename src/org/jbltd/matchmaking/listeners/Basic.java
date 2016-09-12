@@ -29,8 +29,9 @@ public class Basic implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
 
-	e.setJoinMessage(F.GRAY + "<" + F.GREEN + "+" + F.GRAY + ">" + F.DARK_GRAY + e.getPlayer().getName());
+	e.setJoinMessage(F.GRAY + "<" + F.GREEN + "+" + F.GRAY + "> " + F.DARK_GRAY + e.getPlayer().getName());
 
+	//For demonstration purposes, the player is given a random elo between 1000 and 2000.	
 	PlayerData d = new PlayerData(e.getPlayer(), UtilPing.getPing(e.getPlayer()) + 1,
 		new Random().nextInt(2000 - 1000) + 1000);
 	pmanager.MasterData.put(e.getPlayer().getUniqueId(), d);
@@ -40,6 +41,9 @@ public class Basic implements Listener {
     @EventHandler
     public void onLeave(PlayerQuitEvent e) {
 
+	e.setQuitMessage(F.GRAY + "<" + F.RED + "-" + F.GRAY + "> " + F.DARK_GRAY + e.getPlayer().getName());
+	
+	//Cleanup
 	if (manager.SoloQueue.contains(pmanager.MasterData.get(e.getPlayer().getUniqueId()))) {
 	    manager.SoloQueue.remove(pmanager.MasterData.get(e.getPlayer().getUniqueId()));
 	}

@@ -2,6 +2,12 @@ package org.jbltd.matchmaking.util;
 
 import org.bukkit.ChatColor;
 
+/**
+ * Utility class that I use in all my plugins. Makes chat messages very nice and clean.
+ * F stands for 'formatting'
+ * @author jerem
+ *
+ */
 public class F {
 
     public static String AQUA = ChatColor.AQUA + "";

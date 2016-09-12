@@ -1,6 +1,7 @@
 package org.jbltd.matchmaking.util;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
@@ -9,22 +10,24 @@ import org.jbltd.matchmaking.TeamManager;
 
 public class Team {
 
-    private UUID _teamUID;
     private ArrayList<UUID> _players;
+    private int _elo;
 
     private static TeamManager manager;
 
-    public Team(UUID teamUID, ArrayList<UUID> players) {
+    public Team(TeamManager manager) {
+	Team.manager = manager;
+    }
 
-	this._teamUID = teamUID;
+    public Team(ArrayList<UUID> players, int elo) {
+
 	this._players = players;
+	this._elo = elo;
 
     }
 
-    public static TeamManager getInstance() {
-	if (manager == null) {
-	    manager = new TeamManager();
-	}
+    private static TeamManager getInstance() {
+
 	return manager;
     }
 
@@ -32,32 +35,31 @@ public class Team {
 	return _players;
     }
 
-    public UUID getTeamUniqueId()
-    {
-	return _teamUID;
+    public int getTeamElo() {
+	return _elo;
     }
-    
+
     public void addPlayer(Player player) {
 	_players.add(player.getUniqueId());
-	manager.MasterTeamPlayerData.add(player.getUniqueId());
+	getInstance().MasterTeamPlayerData.add(player.getUniqueId());
     }
 
     public void addPlayer(UUID uuid) {
 	_players.add(uuid);
-	manager.MasterTeamPlayerData.add(uuid);
+	getInstance().MasterTeamPlayerData.add(uuid);
     }
 
     public void removePlayer(Player player) {
 
 	_players.remove(player.getUniqueId());
-	manager.MasterTeamPlayerData.remove(player.getUniqueId());
+	getInstance().MasterTeamPlayerData.remove(player.getUniqueId());
 
     }
 
     public void removePlayer(UUID uuid) {
 
 	_players.remove(uuid);
-	manager.MasterTeamPlayerData.remove(uuid);
+	getInstance().MasterTeamPlayerData.remove(uuid);
 
     }
 
@@ -86,6 +88,14 @@ public class Team {
 	}
 
 	return UtilMath.average(pings);
+
+    }
+
+    public double getTeamCombatValue() {
+
+	double phaseOne = getTeamPlayers().size() * (getTeamAveragePing() + new Random().nextInt(2 - 1) + 1);
+
+	return getTeamElo() / phaseOne;
 
     }
 

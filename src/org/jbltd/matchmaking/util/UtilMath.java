@@ -35,9 +35,4 @@ public class UtilMath {
 	
     }
     
-    public static void calculateRank()
-    {
-	//TODO
-    }
-    
 }

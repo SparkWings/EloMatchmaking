@@ -2,6 +2,10 @@ package org.jbltd.matchmaking.util;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+/**
+ * Runnable task I learned how to do while at Mineplex. The task runs every tick to call an event which can be listened to in various time increments.
+ *
+ */
 public class UpdateTask implements Runnable
 {
 	private JavaPlugin _plugin;

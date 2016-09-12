@@ -21,6 +21,7 @@ public class Accept implements CommandExecutor {
 
 	if (cmd.getName().equalsIgnoreCase("accept")) {
 
+	    //Loop through invites to find this player's invite
 	    for (Invite i : Invite.AllInvites) {
 		if (i.getInvitee() == player) {
 		    Invite.AllInvites.remove(i);

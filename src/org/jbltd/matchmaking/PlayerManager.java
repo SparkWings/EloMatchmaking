@@ -6,7 +6,10 @@ import java.util.UUID;
 
 import org.jbltd.matchmaking.util.PlayerData;
 
-
+/**
+ * Class used to store player data values.
+ *
+ */
 public class PlayerManager {
 
     public HashMap<UUID, PlayerData> MasterData = new HashMap<>();
