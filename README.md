@@ -6,17 +6,10 @@ A simple matchmaking system for Minecraft.
 
 Uses Spigot 1.8.8-R0.1-SNAPSHOT for building.
 
-Features:
-- Solo and Team Queueing for games
-- Game API functionality
 #How it Works
 
 When a player joins the server, they are given the option to either queue for the solo queue, or create a party (called a team). If they choose to go solo, they are matched to another player in the queue that is the closest possible Combat Value to them. Combat Value is what the system reads is how "prepared" the player is for their fight. Players with lower combat values are seen as less prepared.
 
-TODO:
-- Team Queueing
-- Disconnect Handling
-- Improved AI
 Combat value is determined by the player's elo divided by the player's ping.
 
 If the player chooses to start a team, the team leader (and only the team leader) may add his/her team to the Team Queue. The team queue matches teams based on the team combat value, or: The Team's elo divided by the team size multiplied by the team's average ping.
