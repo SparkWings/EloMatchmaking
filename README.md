@@ -1,4 +1,4 @@
-# EloMatchmaking
+# Matchmaking
 
 
 A simple matchmaking system for Minecraft.
