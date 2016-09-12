@@ -19,3 +19,12 @@ Once the queue tells a player they are to be teleported, the player(s) are remov
 For demonstration purposes, in the code when the player either joins the server or creates a team, they are given a random elo.
 
 In the event of an odd number of players or teams in the queue, the last person listed in the queue, or as the system reads it, the most unprepared individual(s) are left out, only to automatically be readded to the combat queue.
+
+
+
+#Analytics
+
+The average amount of time for a queue processing to occur is 0.007 seconds for 3 players.
+The average amount of time it takes for the plugin to register, enable, and configure its modules is 0.0113 seconds
+Quadratic Big O Notation was not used.
+HashSets are used to store data tables which could be considerably large, whereas ArrayLists are used to store smaller data
