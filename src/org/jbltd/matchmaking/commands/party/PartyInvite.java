@@ -5,12 +5,22 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.jbltd.matchmaking.TeamManager;
 import org.jbltd.matchmaking.commands.party.util.Invite;
 import org.jbltd.matchmaking.util.F;
 import org.jbltd.matchmaking.util.Team;
 
 public class PartyInvite implements CommandExecutor {
 
+    private TeamManager manager;
+    
+    public PartyInvite(TeamManager manager)
+    {
+	
+	this.manager = manager;
+	
+    }
+    
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
@@ -21,7 +31,7 @@ public class PartyInvite implements CommandExecutor {
 
 	if (cmd.getName().equalsIgnoreCase("tinvite")) {
 
-	    if (!Team.MasterTeams.contains(player.getUniqueId())) {
+	    if (!manager.MasterTeamPlayerData.contains(player.getUniqueId())) {
 		player.sendMessage(F.error("Teams", "You are not on a team.", false));
 		return true;
 	    }
@@ -51,6 +61,16 @@ public class PartyInvite implements CommandExecutor {
 		return true;
 	    }
 
+	    if(manager.MasterTeamPlayerData.contains(target.getUniqueId()))
+	    {
+		player.sendMessage(F.error("Teams", "That player is already on a team", false));
+	    }
+	    
+	    if(t.getTeamLeader() != player)
+	    {
+		player.sendMessage(F.error("Teams", "You are not the team leader.", false));
+	    }
+	    
 	    if (Invite.searchInviteByPlayer(target) == null) {
 		Invite i = new Invite(player, target);
 		Invite.AllInvites.add(i);

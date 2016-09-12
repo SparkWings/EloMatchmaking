@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.jbltd.matchmaking.util.F;
+import org.jbltd.matchmaking.util.PlayerData;
 import org.jbltd.matchmaking.util.Team;
 import org.jbltd.matchmaking.util.UpdateEvent;
 import org.jbltd.matchmaking.util.UpdateType;
@@ -18,9 +19,9 @@ import org.jbltd.matchmaking.util.UpdateType;
 @SuppressWarnings("unused")
 public class QueueManager implements Listener {
 
-    public static ArrayList<PlayerData> SoloQueue = new ArrayList<>();
-    public static ArrayList<Team> TeamQueue = new ArrayList<>();
-
+    public ArrayList<PlayerData> SoloQueue = new ArrayList<>();
+    public ArrayList<Team> TeamQueue = new ArrayList<>();
+    
     @EventHandler
     public void searchSoloQueue(UpdateEvent e) {
 

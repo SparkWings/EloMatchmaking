@@ -1,7 +1,4 @@
-package org.jbltd.matchmaking;
-
-import java.util.HashMap;
-import java.util.UUID;
+package org.jbltd.matchmaking.util;
 
 import org.bukkit.entity.Player;
 
@@ -10,7 +7,6 @@ public class PlayerData {
     private Player _player;
     private int _ping, _rating;
 
-    public static HashMap<UUID, PlayerData> MasterData = new HashMap<>();
     
     public PlayerData(Player player, int ping, int rating) {
 	this._player = player;
