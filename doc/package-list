@@ -1,0 +1,6 @@
+org.jbltd.matchmaking
+org.jbltd.matchmaking.commands
+org.jbltd.matchmaking.commands.party
+org.jbltd.matchmaking.commands.party.util
+org.jbltd.matchmaking.listeners
+org.jbltd.matchmaking.util
